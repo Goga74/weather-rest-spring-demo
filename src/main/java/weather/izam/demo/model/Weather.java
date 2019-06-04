@@ -12,6 +12,7 @@ public class Weather {
     public String getTimezone() {
         return this.timezone;
     }
+
     public void setTimezone(String timezone) {
         this.timezone = timezone;
     }
@@ -19,6 +20,7 @@ public class Weather {
     public double getLatitude() {
         return this.latitude;
     }
+
     public void setLatitude(double latitude) {
         this.latitude = latitude;
     }
@@ -26,6 +28,7 @@ public class Weather {
     public double getLongitude() {
         return this.longitude;
     }
+
     public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
@@ -33,6 +36,7 @@ public class Weather {
     public Currently getCurrently() {
         return currently;
     }
+
     public void setCurrently(Currently currently) {
         this.currently = currently;
     }
@@ -40,10 +44,10 @@ public class Weather {
     @Override
     public String toString() {
         return "{" +
-            "timezone:'" + this.getTimezone() + "'," +
-            "latitude:" + this.getLatitude() + ',' +
-            "longitude:" + this.getLongitude()  +
-            ", currently:" + currently +
-            '}';
+                "timezone:'" + this.getTimezone() + "'," +
+                "latitude:" + this.getLatitude() + ',' +
+                "longitude:" + this.getLongitude() +
+                ", currently:" + currently +
+                '}';
     }
 }

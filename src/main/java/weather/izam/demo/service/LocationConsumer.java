@@ -13,7 +13,7 @@ import weather.izam.demo.model.Location;
 
 @Component
 @Service
-@CacheConfig(cacheNames={"location"})
+@CacheConfig(cacheNames = {"location"})
 public class LocationConsumer {
     private static final Logger log = LoggerFactory.getLogger(Location.class);
     private RestTemplate restTemplate = new RestTemplateBuilder().build();

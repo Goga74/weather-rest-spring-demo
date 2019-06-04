@@ -9,6 +9,7 @@ public class LocationPOJO {
     public String getIp() {
         return ip;
     }
+
     public void setIp(String ip) {
         this.ip = ip;
     }
@@ -16,6 +17,7 @@ public class LocationPOJO {
     public String getCountry() {
         return country;
     }
+
     public void setCountry(String country) {
         this.country = country;
     }
@@ -23,6 +25,7 @@ public class LocationPOJO {
     public double getLatitude() {
         return this.latitude;
     }
+
     public void setLatitude(double latitude) {
         this.latitude = latitude;
     }
@@ -30,6 +33,7 @@ public class LocationPOJO {
     public double getLongitude() {
         return this.longitude;
     }
+
     public void setLongitude(double longitude) {
         this.longitude = longitude;
     }

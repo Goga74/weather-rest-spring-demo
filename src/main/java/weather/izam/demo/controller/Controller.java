@@ -21,39 +21,39 @@ import javax.validation.Valid;
 
 @RestController
 public class Controller {
-	private static final Logger log = LoggerFactory.getLogger(Controller.class);
-	private static final String weatherKey = "bea3233e802b6839cd4aedaeb2e4f778";
+    private static final Logger log = LoggerFactory.getLogger(Controller.class);
+    private static final String weatherKey = "bea3233e802b6839cd4aedaeb2e4f778";
 
-	@Autowired
-	private WeatherRepository repository;
-	@Autowired
-	private LocationConsumer locationService;
+    @Autowired
+    private WeatherRepository repository;
+    @Autowired
+    private LocationConsumer locationService;
 
-	@Autowired
-	private WeatherConsumer weatherService;
-	
-	@GetMapping(path="/weather")
-	public @ResponseBody
-	ResponseEntity<Currently> addNewIp (@Valid @RequestParam String ip) {
-		WeatherEntity weatherEntity = new WeatherEntity();
-		Weather weatherData;
-		try {
-			weatherEntity.setIp(ip);
+    @Autowired
+    private WeatherConsumer weatherService;
 
-			Location loc = locationService.getLocation(ip);
-			weatherData = weatherService.getWeather(weatherKey, loc);
+    @GetMapping(path = "/weather")
+    public @ResponseBody
+    ResponseEntity<Currently> addNewIp(@Valid @RequestParam String ip) {
+        WeatherEntity weatherEntity = new WeatherEntity();
+        Weather weatherData;
+        try {
+            weatherEntity.setIp(ip);
 
-			weatherEntity.setLocation(loc);
-			weatherEntity.setTimezone(weatherData.getTimezone());
-			weatherEntity.setCountry(loc.getCountry());
-			weatherEntity.setCurrently(weatherData.getCurrently());
+            Location loc = locationService.getLocation(ip);
+            weatherData = weatherService.getWeather(weatherKey, loc);
 
-			repository.save(weatherEntity);
-			return ResponseEntity.ok(weatherData.getCurrently());
-		} catch (RestClientException ex) {
-			String message = String.format("Error: %s", ex.getMessage());
-			log.error(message);
-			return ResponseEntity.badRequest().build();
-		}
-	}
+            weatherEntity.setLocation(loc);
+            weatherEntity.setTimezone(weatherData.getTimezone());
+            weatherEntity.setCountry(loc.getCountry());
+            weatherEntity.setCurrently(weatherData.getCurrently());
+
+            repository.save(weatherEntity);
+            return ResponseEntity.ok(weatherData.getCurrently());
+        } catch (RestClientException ex) {
+            String message = String.format("Error: %s", ex.getMessage());
+            log.error(message);
+            return ResponseEntity.badRequest().build();
+        }
+    }
 }

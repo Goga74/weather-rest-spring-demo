@@ -16,7 +16,7 @@ import java.util.Locale;
 
 @Component
 @Service
-@CacheConfig(cacheNames={"weather"})
+@CacheConfig(cacheNames = {"weather"})
 public class WeatherConsumer {
     private static final Logger log = LoggerFactory.getLogger(Location.class);
 

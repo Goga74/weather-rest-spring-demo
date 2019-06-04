@@ -31,6 +31,7 @@ import static org.springframework.test.web.client.response.MockRestResponseCreat
 @SpringBootTest
 public class WeatherConsumerTests {
     private static final Logger log = LoggerFactory.getLogger(WeatherConsumerTests.class);
+    // key should to renew in free account of service https://api.darksky.net every 30 days
     private static final String weatherKey = "bea3233e802b6839cd4aedaeb2e4f778";
     private static final double lat = 0.0;
     private static final double lon = 0.0;
@@ -59,8 +60,8 @@ public class WeatherConsumerTests {
         log.info(w.toString());
 
         String query = String.format("https://api.darksky.net/forecast/%s/%s,%s?units=si", weatherKey,
-            String.format(Locale.ROOT, "%10.8f", lat).trim(),
-            String.format(Locale.ROOT, "%11.8f", lon).trim());
+                String.format(Locale.ROOT, "%10.8f", lat).trim(),
+                String.format(Locale.ROOT, "%11.8f", lon).trim());
         try {
             mockServer.expect(ExpectedCount.once(),
                     requestTo(new URI(query)))

@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
 @Entity
 public class WeatherEntity {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     @NotNull
@@ -46,6 +46,7 @@ public class WeatherEntity {
     public Integer getId() {
         return id;
     }
+
     public void setId(Integer id) {
         this.id = id;
     }
@@ -53,6 +54,7 @@ public class WeatherEntity {
     public String getIp() {
         return ip;
     }
+
     public void setIp(String ip) {
         this.ip = ip;
     }
@@ -60,6 +62,7 @@ public class WeatherEntity {
     public String getCountry() {
         return country;
     }
+
     public void setCountry(String country) {
         this.country = country;
     }
@@ -67,6 +70,7 @@ public class WeatherEntity {
     public String getTimezone() {
         return timezone;
     }
+
     public void setTimezone(String timezone) {
         this.timezone = timezone;
     }
@@ -74,6 +78,7 @@ public class WeatherEntity {
     public long getTime() {
         return time;
     }
+
     public void setTime(long time) {
         this.time = time;
     }
@@ -81,6 +86,7 @@ public class WeatherEntity {
     public double getLatitude() {
         return this.latitude;
     }
+
     public void setLatitude(double latitude) {
         this.latitude = latitude;
     }
@@ -88,6 +94,7 @@ public class WeatherEntity {
     public double getLongitude() {
         return this.longitude;
     }
+
     public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
@@ -95,6 +102,7 @@ public class WeatherEntity {
     public String getSummary() {
         return summary;
     }
+
     public void setSummary(String summary) {
         this.summary = summary;
     }
@@ -102,6 +110,7 @@ public class WeatherEntity {
     public double getTemperature() {
         return this.temperature;
     }
+
     public void setTemperature(double temperature) {
         this.temperature = temperature;
     }

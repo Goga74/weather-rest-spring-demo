@@ -15,11 +15,11 @@ public class Location extends LocationPOJO {
     @Override
     public String toString() {
         return "Location{" +
-            "ip='" + this.getIp() + "'," +
-            "country='" + this.getCountry() + "'," +
-            "latitude=" + this.getLatitude() + ',' +
-            "longitude=" + this.getLongitude() +
-            '}';
+                "ip='" + this.getIp() + "'," +
+                "country='" + this.getCountry() + "'," +
+                "latitude=" + this.getLatitude() + ',' +
+                "longitude=" + this.getLongitude() +
+                '}';
     }
 
     @Override
@@ -41,10 +41,7 @@ public class Location extends LocationPOJO {
             return false;
         }
 
-        if (Math.abs(this.getLatitude() - other.getLatitude()) > 0.000001) {
-            return false;
-        }
+        return !(Math.abs(this.getLatitude() - other.getLatitude()) > 0.000001);
 
-        return true;
     }
 }
