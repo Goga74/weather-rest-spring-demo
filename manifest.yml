@@ -1,0 +1,8 @@
+---
+applications:
+- name: weather-demo
+  memory: 512M
+  instances: 1
+  host: rest-service
+  domain: weather.demo
+  path: build/libs/weather-demo-0.1.0.jar
